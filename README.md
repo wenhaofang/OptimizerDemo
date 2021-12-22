@@ -19,3 +19,11 @@ Optimizers:
 * `optimizer3`: AdaGrad
 * `optimizer4`: RMSProp
 * `optimizer5`: Adam
+
+### Unit Test
+
+* for loader
+
+```shell
+PYTHONPATH=. python loaders/loader.py
+```
