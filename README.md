@@ -27,3 +27,9 @@ Optimizers:
 ```shell
 PYTHONPATH=. python loaders/loader.py
 ```
+
+* for module
+
+```shell
+PYTHONPATH=. python modules/module.py
+```
