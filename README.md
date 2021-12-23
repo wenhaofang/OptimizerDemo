@@ -50,6 +50,12 @@ python main.py \
     --optim_type 1 \
     --learning_rate 0.1 \
     --num_epochs 10
+# optimizer1: SGD (Official Implementation)
+python main.py \
+    --optim_type 1 \
+    --official \
+    --learning_rate 0.1 \
+    --num_epochs 10
 ```
 
 ```shell
@@ -59,12 +65,26 @@ python main.py \
     --learning_rate 0.1 \
     --momentum 0.9 \
     --num_epochs 10
+# optimizer2: SGDM (Official Implementation)
+python main.py \
+    --optim_type 2 \
+    --official \
+    --learning_rate 0.1 \
+    --momentum 0.9 \
+    --num_epochs 10
 ```
 
 ```shell
 # optimizer3: AdaGrad
 python main.py \
     --optim_type 3 \
+    --learning_rate 0.01 \
+    --eps 1e-10 \
+    --num_epochs 10
+# optimizer3: AdaGrad (Official Implementation)
+python main.py \
+    --optim_type 3 \
+    --official \
     --learning_rate 0.01 \
     --eps 1e-10 \
     --num_epochs 10
@@ -78,12 +98,29 @@ python main.py \
     --eps 1e-8 \
     --gamma 0.99 \
     --num_epochs 10
+# optimizer4: RMSProp (Official Implementation)
+python main.py \
+    --optim_type 4 \
+    --official \
+    --learning_rate 0.01 \
+    --eps 1e-8 \
+    --gamma 0.99 \
+    --num_epochs 10
 ```
 
 ```shell
 # optimizer5: Adam
 python main.py \
     --optim_type 5 \
+    --learning_rate 0.001 \
+    --beta1 0.9 \
+    --beta2 0.999 \
+    --eps 1e-8 \
+    --num_epochs 10
+# optimizer5: Adam (Official Implementation)
+python main.py \
+    --optim_type 5 \
+    --official \
     --learning_rate 0.001 \
     --beta1 0.9 \
     --beta2 0.999 \

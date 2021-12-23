@@ -24,6 +24,9 @@ class AdaGrad():
             param.data = param.data - lr * param.grad.data / torch.sqrt(state + eps)
 
 def get_optimizer(params, option):
-    return AdaGrad(params, {
-        'lr': option.learning_rate, 'eps': option.eps
-    })
+    if option.official:
+        return torch.optim.Adagrad(params, lr = option.learning_rate, eps = option.eps)
+    else:
+        return AdaGrad(params, {
+            'lr': option.learning_rate, 'eps': option.eps
+        })

@@ -24,6 +24,9 @@ class RMSProp():
             param.data = param.data - lr * param.grad.data / torch.sqrt(state + eps)
 
 def get_optimizer(params, option):
-    return RMSProp(params, {
-        'lr': option.learning_rate, 'eps': option.eps, 'gamma': option.gamma
-    })
+    if option.official:
+        return torch.optim.RMSprop(params, lr = option.learning_rate, eps = option.eps, alpha = option.gamma)
+    else:
+        return RMSProp(params, {
+            'lr': option.learning_rate, 'eps': option.eps, 'gamma': option.gamma
+        })

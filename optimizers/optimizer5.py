@@ -31,6 +31,9 @@ class Adam():
         self.option['t'] += 1
 
 def get_optimizer(params, option):
-    return Adam(params, {
-        'lr': option.learning_rate, 'beta1': option.beta1, 'beta2': option.beta2, 'eps': option.eps
-    })
+    if option.official:
+        return torch.optim.Adam(params, lr = option.learning_rate, betas = (option.beta1, option.beta2), eps = option.eps)
+    else:
+        return Adam(params, {
+            'lr': option.learning_rate, 'beta1': option.beta1, 'beta2': option.beta2, 'eps': option.eps
+        })

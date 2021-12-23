@@ -20,6 +20,7 @@ def get_parser():
 
     # For Optim
     parser.add_argument('--optim_type', type = int, choices = range(1, 6), default = 1, help = '')
+    parser.add_argument('--official', action = 'store_true', help = '')
 
     parser.add_argument('--learning_rate', type = float, default = 0.01, help = '')
     parser.add_argument('--momentum', type = float, default = 0.9, help = '')

@@ -24,6 +24,9 @@ class SGDM():
             param.data = param.data - state.data
 
 def get_optimizer(params, option):
-    return SGDM(params, {
-        'lr': option.learning_rate, 'momentum': option.momentum
-    })
+    if option.official:
+        return torch.optim.SGD(params, lr = option.learning_rate, momentum = option.momentum)
+    else:
+        return SGDM(params, {
+            'lr': option.learning_rate, 'momentum': option.momentum
+        })

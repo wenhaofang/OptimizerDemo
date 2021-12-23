@@ -82,4 +82,5 @@ for epoch in range(option.num_epochs):
     train_loss.append(train_info['loss'])
     valid_loss.append(valid_info['loss'])
 
-plot_loss(train_loss, valid_loss, os.path.join(root_folder, 'optim_' + str(option.optim_type) + '.jpg'))
+save_path = os.path.join(root_folder, 'optim_' + str(option.optim_type) + ('_official' if option.official else '') + '.jpg')
+plot_loss(train_loss, valid_loss, save_path)

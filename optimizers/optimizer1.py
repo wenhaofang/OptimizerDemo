@@ -1,5 +1,7 @@
 # SGD
 
+import torch
+
 class SGD():
     def __init__(self, params, option):
         self.params = list(params)
@@ -17,6 +19,9 @@ class SGD():
             param.data = param.data - lr * param.grad.data
 
 def get_optimizer(params, option):
-    return SGD(params, {
-        'lr': option.learning_rate
-    })
+    if option.official:
+        return torch.optim.SGD(params, lr = option.learning_rate)
+    else:
+        return SGD(params, {
+            'lr': option.learning_rate
+        })
