@@ -37,7 +37,7 @@ def evaluate(true , pred):
 
     return f_i, f_macro, f_micro
 
-# for regression problem
+# for regression (todo: fix numerical problem)
 def mse_loss(pred, true, reduction = 'mean'):
     if (
         reduction != 'mean' and
@@ -49,7 +49,7 @@ def mse_loss(pred, true, reduction = 'mean'):
     elif reduction == 'sum':
         return ((pred - true.view(pred.shape)) ** 2).sum()
 
-# for classification problem
+# for classification (todo: fix numerical problem)
 def cross_entropy(pred, true, reduction = 'mean'):
     if (
         reduction != 'mean' and

@@ -55,7 +55,7 @@ module = module.to (device)
 
 logger.info('prepare envs')
 
-criterion = cross_entropy
+criterion = torch.nn.functional.cross_entropy
 
 if option.optim_type == 1:
     optimizer = get_optimizer1(module.parameters(), option)

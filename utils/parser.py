@@ -12,7 +12,7 @@ def get_parser():
     # For Module
     parser.add_argument('--features', type = int, nargs = '+', default = [784, 250, 100, 10], help = '')
     parser.add_argument('--bias', type = bool, nargs = '+', default = True, help = '')
-    parser.add_argument('--activate', choices = ['relu', 'tanh', 'sigmoid'], nargs = '+', default = 'relu', help = '')
+    parser.add_argument('--activate', choices = ['relu', 'tanh', 'sigmoid'], nargs = '+', default = 'tanh', help = '')
 
     # For Train
     parser.add_argument('--batch_size', type = int, default = 64, help = '')
